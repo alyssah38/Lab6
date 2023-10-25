@@ -27,24 +27,21 @@ def decode(password):
 
 
 def main():
-
      while True:
         print('Menu:')
         print('-------------')
         print('1. Encode')
         print('2. Decode')
         print('3. Quit')
-        user_input = input('Select a menu option: ')
+        user_input = input('Please enter a option: ')
         if user_input == '1':
             # user's password input
-            user_password = list(input('What is your password? '))
-            print(f'Your encoded password is {encode(user_password)}')
+            user_password = input('Please enter your password to encode: ')
+            encoded_password = encode(user_password)
+            print('Your password has been encoded and stored!')
         elif user_input == '2':
-            # user's password input
-            user_password = list(input('What is your encoded password? '))
-            print(f'Your password is {decode(user_password)}')
+            print(f'The encoded password is {encoded_password}, and the original password is {user_password}.')
         else:
-            print('Goodbye!')
             break
 
 if __name__ == "__main__":
