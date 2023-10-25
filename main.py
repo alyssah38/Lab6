@@ -1,4 +1,4 @@
-
+# Alyssa Hunt
 def encode(password):
     encoded_password = []
     for i in range(0, len(password)):
