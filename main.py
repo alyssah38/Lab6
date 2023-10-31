@@ -23,7 +23,17 @@ def encode(password):
 
 # decoder function that encodes user's input
 def decode(password):
-# for cole to fill in
+    dec_pass = ''
+    for i in passw:
+        if 3 <= int(i) <= 9:
+            dec_pass += str(int(i) - 3)
+        elif int(i) == 2:
+            dec_pass += '9'
+        elif int(i) == 1:
+            dec_pass += '8'
+        elif int(i) == 0:
+            dec_pass += '7'
+    return dec_pass
 
 
 def main():
@@ -40,6 +50,7 @@ def main():
             encoded_password = encode(user_password)
             print('Your password has been encoded and stored!')
         elif user_input == '2':
+            user_password = decode(encoded_password)
             print(f'The encoded password is {encoded_password}, and the original password is {user_password}.')
         else:
             break
